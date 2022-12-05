@@ -12,3 +12,5 @@ For training, put the following script in the terminal:
 For evaluating the exisitng model, put the following script in the terminal:
 
 `python train.py False <dataset_name>`
+
+For testing, the dataset used is [Air-Written Characters](https://www.kaggle.com/datasets/prabhatk579/airwritten-characters).
