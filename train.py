@@ -31,7 +31,7 @@ print(train_y.shape)
 print(test_y.shape)
 # Dictionary for getting characters from index values...
 
-if dataset == 'A_Z Handwritten Data':         
+if dataset == 'A_Z_Handwritten_Data':         
     model_name = 'eng_alphabets'
     word_dict = {0:'A',1:'B',2:'C',3:'D',4:'E',5:'F',6:'G',7:'H',8:'I',9:'J',10:'K',11:'L',12:'M',13:'N',14:'O',15:'P',16:'Q',17:'R',18:'S',19:'T',20:'U',21:'V',22:'W',23:'X', 24:'Y',25:'Z'}
     res = 28
@@ -105,7 +105,7 @@ test_yOHE = to_categorical(test_y, num_classes = classes, dtype='int')
 print("New shape of test labels: ", test_yOHE.shape)
 
 # CNN model...
-if Training == True:
+if Training == "True":
     model = Sequential()
 
     model.add(Conv2D(filters=32, kernel_size=(3, 3), activation='relu', input_shape=(res,res,1)))
@@ -146,5 +146,5 @@ if Training == True:
     print("The training loss is :", history.history['loss'])
     
 else:
-    model = tf.keras.models.load_model('models/model'+model_name+'.h5')
+    model = tf.keras.models.load_model('models/model_'+model_name+'.h5')
     model.summary()
