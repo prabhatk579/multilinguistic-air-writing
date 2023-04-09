@@ -4,10 +4,10 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Flatten, Conv2D, MaxPool2D
-from tensorflow.keras.callbacks import ReduceLROnPlateau, EarlyStopping
-from tensorflow.keras.utils import to_categorical
+from keras.models import Sequential
+from keras.layers import Dense, Flatten, Conv2D, MaxPool2D
+from keras.callbacks import ReduceLROnPlateau, EarlyStopping
+from keras.utils import to_categorical
 import sys
 
 Training = sys.argv[1] # Change this to False if you want to use trained model after initial training
