@@ -234,7 +234,7 @@ if Training == True:
     )
 
     model.summary()
-    model.save("models/model" + model_name + ".h5")
+    model.save("models/model_" + model_name + ".h5")
 
     # Displaying the accuracies & losses for train & validation set...
 
@@ -244,5 +244,5 @@ if Training == True:
     print("The training loss is :", history.history["loss"])
 
 else:
-    model = tf.keras.models.load_model("models/model" + model_name + ".h5")
+    model = tf.keras.models.load_model("models/model_" + model_name + ".h5")
     model.summary()
