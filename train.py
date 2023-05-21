@@ -141,7 +141,9 @@ class ProcessData:
         y = dataframe["0"]
 
         # Reshaping the data in csv file so that it can be displayed as an image...
-        train_x, test_x, train_y, test_y = train_test_split(X, y, test_size=0.2)
+        train_x, test_x, train_y, test_y = train_test_split(
+            X, y, test_size=0.2, shuffle=True, random_state=42
+        )
         train_x = np.reshape(train_x.values, (train_x.shape[0], self.res, self.res))
         test_x = np.reshape(test_x.values, (test_x.shape[0], self.res, self.res))
 
@@ -213,7 +215,7 @@ class TrainModel:
             currentdir, "models", "model_" + self.dataset + ".h5"
         )
         self.logdir = os.path.join(currentdir, "logs" + self.dataset)
-        self.data = os.path.join(currentdir, "combined", "data", self.dataset + ".csv")
+        self.data = os.path.join(currentdir, "data", self.dataset + ".csv")
 
     def train(self):
         process_data = ProcessData(dataset=self.dataset)
