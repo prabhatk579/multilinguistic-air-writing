@@ -247,13 +247,15 @@ class TrainModel:
             output = Dense(classes, activation="softmax", dtype="float32")(x)
 
             model = keras.Model(inputs=input, outputs=output)
-            model.summary()
 
             model.compile(
                 optimizer=keras.optimizers.Adam(1e-3),
                 loss="categorical_crossentropy",
                 metrics=["accuracy"],
             )
+
+            model.summary()
+
             callbacks = [
                 ReduceLROnPlateau(
                     monitor="val_loss", factor=0.2, patience=1, min_lr=0.0001
